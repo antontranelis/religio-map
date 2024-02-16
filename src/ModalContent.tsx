@@ -1,4 +1,3 @@
-import { useState } from 'react'
 
 type ChapterProps = {
     clickAction?: () => void
@@ -7,85 +6,31 @@ type ChapterProps = {
 
 export function Welcome1({ clickAction }: ChapterProps) {
     return (
-        <>
-            <h3 className="font-bold text-lg">Welcome, glad you are here!</h3>
-            <img className="float-right w-32 m-2" src="/earth.svg"></img>
-            <p className="py-3">
-                In the 21st century, humanity is at a special point in its history.
-            </p>
-            <p className="py-1">
-                On the one hand, the people of Planet Earth are facing a multitude of fundamental crises.
-            </p>
-            <p className="py-1">
-                On the other hand, we have all the knowledge and technology to heal the planet and live in harmony with Mother Earth.                  </p>
-            <div className="grid">
-                <label className="btn place-self-end mt-4" onClick={() => clickAction!()}>Next</label>
-            </div>
-        </>
-    )
-}
+        <div className="text-center">
+            <h3 className="mx-auto font-bold text-lg"> "Heal the world, make it a better place, for you and for me, and the entire human race."</h3>
+            <img className="mx-auto w-32 m-2" src="/religio256.png"></img>
 
-export function Welcome2({ clickAction }: ChapterProps) {
-    return (
-        <>
-            <h3 className="font-bold text-lg"> Hypnosis and Disillusion </h3>
+            <p className="py-1 mt-3">
+            In the spirit of unity and compassion, inspired by the timeless message of Michael Jackson's, we introduce a sanctuary in the digital realm—a map that transcends borders, connecting healers from every corner of the globe, in real live. 
+            </p>
+
 
             <p className="py-3">
-                Most people are still stuck in old ways of thinking and living.       </p>
-            <img className="float-right w-32 mx-4 my-2" src="/fear2.svg"></img>
+            This platform is more than just a directory; it's a beacon of hope, a gathering of souls dedicated to the art of healing, so if you encompass the wisdom of yoga, the nurturing touch of Ayurveda, the deep knowledge of Human Design, the ancestral power of shamanism, the transformative journey of personal coach, or whatever form of healing, this web app is for you.
+                  </p>
 
-            <p className="py-1">
-                Hypnotised, they sit in front of screens in concrete blocks, flooded and disillusioned by irrelevant information.
-            </p>
 
-            <p className="py-1">
-                From an early age, they are trained to do alienated work and consume unhealthy and meaningless products.
-            </p>
+                  <p className="py-3">
+                  This web app is not just a directory; it's a vibrant community where every form of healer and seeker can connect, share, and grow. It embodies our belief in the transformative power of compassion and interconnectedness, offering a beacon of hope and healing in a world that yearns for balance and peace.                  </p>
+
+
             <div className="grid">
-                <button className="btn place-self-end mt-4" onClick={() => clickAction!()}>next</button>
+                <button className="btn place-self-center mt-4" onClick={() => clickAction!()}>Start</button>
             </div>
-        </>
+        </div>
     )
 }
 
-export function Welcome3({ clickAction }: ChapterProps) {
-    return (
-        <>
-            <h3 className="font-bold text-lg">But Consciousness is rising </h3>
-            <p className="py-3">
-                More and more people are waking up to what's really happening. </p>
-            <p className="py-1">
-                They are in the process of understanding the potential that is within themselves and within the whole mankind.
-            </p>
-            <img className="float-left w-32 mx-4" src="/camp3.svg"></img>
-
-            <p className="py-1">
-                Starting to reconnect with our Mother Earth and beginning to question things that long times have been taken for granted.
-            </p>
-            <div className="grid">
-                <label className="btn place-self-end mt-4" onClick={() => clickAction!()}>next</label>
-            </div>
-        </>
-    )
-}
-
-export function Welcome4({ clickAction }: ChapterProps) {
-    return (
-        <>
-            <h3 className="font-bold text-lg"> Gemeinsam erschaffen wir Strukturen </h3>
-            <ul className='flex-row pl-4 mt-4'>
-                <li>🥕 Essen & Trinken</li>
-                <li>🏡 Wohn- & Lebensraum</li>
-                <li>💬 Kommunikation</li>
-                <li>💡 Energie</li>
-                <li>🚐 Mobilität</li>
-            </ul>
-            <div className="grid">
-                <button className="btn btn-neutral place-self-end" onClick={() => clickAction!()}>Ich mach mit</button>
-            </div>
-        </>
-    )
-}
 
 const close = () => {
     window.my_modal_3.close();
@@ -93,32 +38,8 @@ const close = () => {
 
 export const ModalContent = () => {
 
-    const [chapter, setChapter] = useState<number>(1);
-    //const setQuestsOpen = useSetQuestOpen()
-
-
-
-    const ActiveChapter = () => {
-        switch (chapter) {
-            case 1:
-                return <Welcome1 clickAction={() => { setChapter(2) }} />
-            case 2:
-                return <Welcome2 clickAction={() => { setChapter(3) }} />
-            case 3:
-                return <Welcome3 clickAction={() => {
-
-                    close();
-                    setTimeout(() => {
-                        //  setQuestsOpen(true);
-                        setChapter(1);
-                    }, 1000);
-
-                }} />
-            default: return <></>
-        };
-    };
 
     return (
-        <ActiveChapter />
+        <Welcome1 clickAction={() => { close();}} />
     )
 }

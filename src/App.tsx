@@ -17,7 +17,7 @@ function App() {
     <div className="App overflow-x-hidden">
 
       <AuthProvider userApi={new userApi}>
-        <AppShell assetsApi={new assetsApi("https://api.utopia-lab.org/assets/")} appName="Utopia Game" nameWidth={180}>
+        <AppShell assetsApi={new assetsApi("https://api.utopia-lab.org/assets/")} appName="Religio DAO" nameWidth={180}>
         <Modal>
           <ModalContent/>
         </Modal>

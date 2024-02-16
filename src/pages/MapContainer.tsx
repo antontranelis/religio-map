@@ -36,9 +36,9 @@ function MapContainer() {
 
     <UtopiaMap zoom={5} height='calc(100dvh - 64px)' width="100%">
       <Layer
-        name='Events'
+        name='Rituals'
         menuIcon={icon}
-        menuText='add new event'
+        menuText='add new ritual to the map'
         menuColor='#f9a825'
         markerIcon='calendar-days-solid'
         markerShape='square'
@@ -56,9 +56,9 @@ function MapContainer() {
         </ItemView>
       </Layer>
       <Layer
-        name='Places'
+        name='Sacred Places'
         menuIcon={MapPinIcon}
-        menuText='add new place'
+        menuText='add new sacred place to the map'
         menuColor='#2E7D32'
         markerIcon='circle-solid'
         markerShape='circle'
@@ -66,7 +66,7 @@ function MapContainer() {
         // data={places}
         api={placesApi} />
       <Layer
-        name='People'
+        name='Healers'
         menuIcon={UserIcon}
         menuText='place your profile on the map'
         menuColor='#C62828'
