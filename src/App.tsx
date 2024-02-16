@@ -18,7 +18,7 @@ function App() {
 
       <AuthProvider userApi={new userApi}>
         <AppShell assetsApi={new assetsApi("https://api.utopia-lab.org/assets/")} appName="Religio DAO" nameWidth={180}>
-        <Modal>
+        <Modal showOnStartup>
           <ModalContent/>
         </Modal>
           <SideBar routes={routes} bottomRoutes={bottomRoutes}/>
@@ -28,7 +28,7 @@ function App() {
               <Route path="/*" element={<MapContainer />}>
                 <Route path='login' element={<LoginPage />}/>
                 <Route path='signup' element={<SignupPage />}/>
-                <Route path='reset-password' element={<RequestPasswordPage reset_url="https://utopia-game.org/set-new-password/"/>}/>
+                <Route path='reset-password' element={<RequestPasswordPage reset_url="https://healtheworld.religiodao.com/set-new-password/"/>}/>
                 <Route path='set-new-password' element={<SetNewPasswordPage />}/>
                 <Route path="profile/*" element={<OverlayProfile/>} />
                 <Route path="profile-settings" element={<OverlayProfileSettings/>} />
